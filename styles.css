@@ -39,3 +39,21 @@
     display: inline-block;
     margin-right: 8px;
 }
+
+/* Carousel Styles */
+#carouselTrack {
+    width: 400%;
+    transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+    #carouselTrack {
+        width: 200%;
+    }
+}
+
+@media (min-width: 1024px) {
+    #carouselTrack {
+        width: 133.33%;
+    }
+}

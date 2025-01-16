@@ -27,6 +27,24 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle('hidden');
 }
 
+// Carousel Functionality
+let currentSlide = 0;
+const totalSlides = 4; // Total number of slides
+const slidesPerView = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+
+function moveCarousel(direction) {
+    const track = document.getElementById('carouselTrack');
+    const slideWidth = 100 / slidesPerView;
+
+    if (direction === 'next') {
+        currentSlide = (currentSlide + 1) % (totalSlides - slidesPerView + 1);
+    } else {
+        currentSlide = (currentSlide - 1 + (totalSlides - slidesPerView + 1)) % (totalSlides - slidesPerView + 1);
+    }
+
+    track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+}
+
 // Services Section
 const services = [
     {
