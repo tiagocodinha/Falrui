@@ -1,0 +1,41 @@
+.service-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-card.expanded {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.service-content {
+    transition: transform 0.3s ease;
+}
+
+.service-card.expanded .service-content {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .service-card.expanded {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+.fade-in {
+    opacity: 1 !important;
+}
+
+.bullet-point {
+    width: 8px;
+    height: 8px;
+    background-color: #2563eb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
