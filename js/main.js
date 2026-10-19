@@ -1,10 +1,9 @@
-// FALRUI – comportamento do site (menu, hero, lightbox, formulário).
+// FALRUI – comportamento do site (menu, mapa de obras, lightbox, formulário).
 // Configuração editável:
 const site = { email: 'geral@falrui.pt', phone: '+351 262 990 870', phoneHref: 'tel:+351262990870' };
 // URL do serviço que recebe os pedidos do formulário (Formspree, Netlify Forms, função própria...).
 // Enquanto estiver vazio, o formulário valida os campos mas NÃO envia nada e avisa o utilizador.
 const formEndpoint = '';
-
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -13,61 +12,9 @@ const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length) {
   if (reduced || !('IntersectionObserver' in window)) revealEls.forEach((el) => el.classList.add('in'));
   else {
-    const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1 });
     revealEls.forEach((el) => io.observe(el));
   }
-}
-
-// Hero: rotação de fotografias de projetos (com pausa; desligada se o utilizador preferir menos movimento)
-const hero = document.querySelector('.hero');
-if (hero) {
-  const slides = [...hero.querySelectorAll('.slide')];
-  const dotsBox = hero.querySelector('.dots');
-  const cap = hero.querySelector('.hero-cap');
-  const pauseBtn = hero.querySelector('.pause');
-  let i = 0, timer = null, playing = !reduced;
-  const dots = slides.map((_, n) => {
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'dot'; b.setAttribute('aria-label', `Fotografia ${n + 1} de ${slides.length}`);
-    b.addEventListener('click', () => { go(n); if (playing) restart(); });
-    dotsBox.appendChild(b); return b;
-  });
-  const go = (n) => {
-    i = (n + slides.length) % slides.length;
-    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
-    dots.forEach((d, k) => d.setAttribute('aria-current', String(k === i)));
-    cap.innerHTML = `<strong></strong> <span></span>`;
-    cap.firstChild.textContent = slides[i].dataset.nome;
-    cap.lastChild.textContent = slides[i].dataset.local === slides[i].dataset.nome ? '' : '· ' + slides[i].dataset.local;
-  };
-  const stop = () => { clearInterval(timer); timer = null; };
-  const restart = () => { stop(); timer = setInterval(() => go(i + 1), 6500); };
-  const setPlaying = (p) => { playing = p; p ? restart() : stop(); pauseBtn.textContent = p ? 'Pausar' : 'Reproduzir'; pauseBtn.setAttribute('aria-pressed', String(!p)); };
-  pauseBtn.addEventListener('click', () => setPlaying(!playing));
-  go(0); setPlaying(playing);
-  if (slides.length < 2) { dotsBox.hidden = true; pauseBtn.hidden = true; }
-}
-
-// Lightbox de projetos
-const lb = document.getElementById('lightbox');
-if (lb) {
-  const cards = [...document.querySelectorAll('.pcard')];
-  let cur = 0;
-  const visible = () => cards.filter((c) => !c.closest('.project').hidden);
-  const show = (c) => {
-    const img = c.querySelector('img');
-    lb.querySelector('#lb-img').src = img.currentSrc || img.src;
-    lb.querySelector('#lb-img').alt = img.alt;
-    lb.querySelector('#lb-tipo').textContent = c.dataset.tipoLabel;
-    lb.querySelector('#lb-nome').textContent = c.dataset.nome;
-    lb.querySelector('#lb-meta').textContent = [c.dataset.local, c.dataset.ano, c.dataset.solucao && `Solução: ${c.dataset.solucao}`, c.dataset.descricao].filter(Boolean).join(' · ');
-  };
-  const step = (d) => { const v = visible(); cur = (cur + d + v.length) % v.length; show(v[cur]); };
-  cards.forEach((c) => c.addEventListener('click', () => { cur = Math.max(0, visible().indexOf(c)); show(c); lb.showModal(); }));
-  lb.querySelector('.prev').addEventListener('click', () => step(-1));
-  lb.querySelector('.next').addEventListener('click', () => step(1));
-  lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
-  lb.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); });
 }
 
 // Menu móvel
@@ -80,20 +27,54 @@ if (toggle && menu) {
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
 }
 
-// Filtro de projetos
-const filters = document.querySelector('.filters');
-if (filters) {
-  const items = [...document.querySelectorAll('.project')];
+// Mapa de obras: pré-visualização ao passar o rato / focar, filtro e lightbox
+const rows = [...document.querySelectorAll('.vao-row')];
+if (rows.length) {
+  const pv = document.getElementById('pv-img');
+  const setPreview = (r) => {
+    rows.forEach((x) => x.classList.toggle('on', x === r));
+    if (!pv) return;
+    pv.src = r.dataset.prev;
+    pv.alt = `Fotografia do projeto ${r.dataset.nome}, ${r.dataset.local}`;
+    document.getElementById('pv-ref').textContent = 'Obra ' + r.dataset.ref;
+    document.getElementById('pv-nome').textContent = r.dataset.nome;
+    document.getElementById('pv-meta').textContent = [r.dataset.local, r.dataset.tipoLabel].join(' · ');
+  };
+  if (pv) setPreview(rows[0]);
+  rows.forEach((r) => { r.addEventListener('mouseenter', () => setPreview(r)); r.addEventListener('focus', () => setPreview(r)); });
+
+  const filters = document.querySelector('.filters');
   const count = document.getElementById('count');
-  filters.addEventListener('click', (e) => {
+  if (filters) filters.addEventListener('click', (e) => {
     const b = e.target.closest('.chip');
     if (!b) return;
     filters.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', String(c === b)));
     const f = b.dataset.filter;
-    let n = 0;
-    items.forEach((li) => { const show = f === 'all' || li.dataset.tipo === f; li.hidden = !show; if (show) n++; });
-    if (count) count.textContent = `${n} ${n === 1 ? 'projeto' : 'projetos'}`;
+    let n = 0, first = null;
+    rows.forEach((r) => { const li = r.closest('.vao'); const show = f === 'all' || r.dataset.tipoLabel === f; li.hidden = !show; if (show) { n++; first ||= r; } });
+    if (count) count.textContent = `${n} ${n === 1 ? 'obra' : 'obras'}`;
+    if (first) setPreview(first);
   });
+
+  const lb = document.getElementById('lightbox');
+  if (lb) {
+    let cur = 0;
+    const visible = () => rows.filter((r) => !r.closest('.vao').hidden);
+    const show = (r) => {
+      const img = lb.querySelector('#lb-img');
+      img.src = r.dataset.full;
+      img.alt = `Fotografia do projeto ${r.dataset.nome}, ${r.dataset.local}`;
+      lb.querySelector('#lb-ref').textContent = 'Obra ' + r.dataset.ref + ' · ' + r.dataset.tipoLabel;
+      lb.querySelector('#lb-nome').textContent = r.dataset.nome;
+      lb.querySelector('#lb-meta').textContent = [r.dataset.local, r.dataset.ano, r.dataset.solucao && `Solução: ${r.dataset.solucao}`, r.dataset.descricao].filter(Boolean).join(' · ');
+    };
+    const step = (d) => { const v = visible(); cur = (cur + d + v.length) % v.length; show(v[cur]); };
+    rows.forEach((r) => r.addEventListener('click', () => { cur = Math.max(0, visible().indexOf(r)); show(r); lb.showModal(); }));
+    lb.querySelector('.prev').addEventListener('click', () => step(-1));
+    lb.querySelector('.next').addEventListener('click', () => step(1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
+    lb.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); });
+  }
 }
 
 // Formulário de orçamento
@@ -101,6 +82,9 @@ const form = document.getElementById('quote-form');
 if (form) {
   const status = document.getElementById('form-status');
   const btn = form.querySelector('button[type=submit]');
+  const perfil = new URLSearchParams(location.search).get('perfil');
+  if (perfil && form.elements.perfil) form.elements.perfil.value = perfil;
+
   const show = (kind, html) => { status.hidden = false; status.className = `status ${kind}`; status.innerHTML = html; status.focus(); };
   const setErr = (el, msg) => {
     const box = form.querySelector(`#${el.id}-err`);

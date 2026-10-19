@@ -10,9 +10,11 @@
   <meta property="og:locale" content="pt_PT">
   <meta property="og:site_name" content="FALRUI">
   <meta property="og:title" content="Contactos e pedido de orçamento | FALRUI">
-  <meta property="og:description" content="Telefone, email, morada e formulário de pedido de orçamento.">
+  <meta property="og:description" content="Contacte a FALRUI, na Nazaré: telefone +351 262 990 870, email geral@falrui.pt, ou peça um orçamento de caixilharia de alumínio.">
   <meta property="og:url" content="https://www.falrui.pt/contactos/">
-  <meta property="og:image" content="https://www.falrui.pt/wp-content/uploads/2023/10/CrownePlaza1.webp">
+  <meta property="og:image" content="https://www.falrui.pt/wp-content/uploads/2025/06/Troia-1024x682.jpg">
+  <meta name="theme-color" content="#f4f4f1">
+  <link rel="preload" href="../fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/main.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -20,102 +22,70 @@
 <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
 <header class="site-header">
   <div class="wrap bar">
-    <a href="../index.html" class="brand" aria-label="FALRUI – página inicial">
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 21 12 3l10 18z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
-      <span>FALRUI</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
-      <span class="sr">Menu</span><span class="burger" aria-hidden="true"></span>
-    </button>
+    <a href="../index.html" class="logo" aria-label="FALRUI – página inicial"><img src="https://www.falrui.pt/wp-content/uploads/2023/10/Logotipo-FALRUI-03-300x61.png" alt="FALRUI" width="137" height="28"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="sr">Menu</span><span class="burger" aria-hidden="true"></span></button>
     <nav id="menu" class="nav" aria-label="Principal">
-      <a href="../index.html">Início</a>
-      <a href="../empresa/index.html">Empresa</a>
-      <a href="../solucoes/index.html">Soluções</a>
-      <a href="../projetos/index.html">Projetos</a>
-      <a href="../qualidade/index.html">Qualidade</a>
-      <a href="../contactos/index.html" aria-current="page">Contactos</a>
+      <a href="../empresa/index.html"><i>02</i>Empresa</a>
+      <a href="../solucoes/index.html"><i>03</i>Soluções</a>
+      <a href="../projetos/index.html"><i>04</i>Projetos</a>
+      <a href="../qualidade/index.html"><i>05</i>Qualidade</a>
+      <a href="../contactos/index.html" aria-current="page"><i>06</i>Contactos</a>
       <a href="../contactos/index.html#orcamento" class="btn btn-sm">Peça um orçamento</a>
     </nav>
   </div>
 </header>
-
 <main id="conteudo">
-  <div class="page-head"><div class="wrap">
-    <p class="eyebrow">Contactos</p>
-    <h1>Fale connosco ou peça um orçamento.</h1>
-    <p>Ligue, escreva ou envie os detalhes da obra pelo formulário.</p>
-  </div></div>
-
+  <div class="page-head">
+    <i class="tri ink"></i><i class="tri blue"></i>
+    <div class="wrap">
+      <span class="mono">Prancha 06/06 — Contactos</span>
+      <h1>Fale connosco ou peça um orçamento.</h1>
+      <p>Ligue, escreva ou envie os detalhes da obra pelo formulário.</p>
+    </div>
+  </div>
   <section>
     <div class="wrap split wide">
       <div>
-        <h2>Contactos</h2>
         <ul class="contact-list">
-          <li><b>Telefone</b><a href="tel:+351262990870">+351 262 990 870</a></li>
-          <li><b>Email</b><a href="mailto:geral@falrui.pt">geral@falrui.pt</a></li>
-          <li><b>Morada</b><address>Mouchinha, Famalicão<br>2450-027 Nazaré</address><a href="https://maps.app.goo.gl/ehbHLua5JFM9HLAQ7" rel="noopener" target="_blank" style="font-size:1rem">Abrir no mapa<span class="sr"> (abre noutro separador)</span></a></li>
-          <li><b>Horário</b><span class="muted">A confirmar pela FALRUI</span></li>
+          <li><span class="mono">Telefone</span><a href="tel:+351262990870">+351 262 990 870</a></li>
+          <li><span class="mono">Email</span><a href="mailto:geral@falrui.pt">geral@falrui.pt</a></li>
+          <li><span class="mono">Morada</span><address>Mouchinha, Famalicão<br>2450-027 Nazaré</address><a href="https://maps.app.goo.gl/ehbHLua5JFM9HLAQ7" rel="noopener" target="_blank" style="font-size:1rem">Abrir no mapa<span class="sr"> (abre noutro separador)</span></a></li>
+          <li><span class="mono">Horário</span><span class="muted">A confirmar pela FALRUI</span></li>
         </ul>
       </div>
       <div id="orcamento">
-        <h2>Pedido de orçamento</h2>
-        <p class="muted">Indique pelo menos um email ou um telefone. Campos com * são obrigatórios.</p>
         <form id="quote-form" class="quote" novalidate>
+          <div><h2 style="font-size:1.7rem;margin-bottom:.3rem">Pedido de orçamento</h2><p class="hint" style="margin:0">Indique pelo menos um email ou um telefone. Campos com * são obrigatórios.</p></div>
           <p class="hp" aria-hidden="true"><label>Não preencher <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
-          <div>
-            <label for="nome">Nome *</label>
-            <input id="nome" name="nome" autocomplete="name" aria-describedby="nome-err">
-            <p class="err" id="nome-err" role="alert"></p>
+          <div><label for="nome">Nome *</label><input id="nome" name="nome" autocomplete="name" aria-describedby="nome-err"><p class="err" id="nome-err" role="alert"></p></div>
+          <div class="row">
+            <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-err"><p class="err" id="email-err" role="alert"></p></div>
+            <div><label for="telefone">Telefone</label><input id="telefone" name="telefone" type="tel" autocomplete="tel" aria-describedby="telefone-err"><p class="err" id="telefone-err" role="alert"></p></div>
           </div>
           <div class="row">
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-err">
-              <p class="err" id="email-err" role="alert"></p>
-            </div>
-            <div>
-              <label for="telefone">Telefone</label>
-              <input id="telefone" name="telefone" type="tel" autocomplete="tel" aria-describedby="telefone-err">
-              <p class="err" id="telefone-err" role="alert"></p>
-            </div>
+            <div><label for="perfil">O seu perfil</label>
+              <select id="perfil" name="perfil"><option value="">Opcional</option><option>Arquiteto ou projetista</option><option>Construtor ou promotor</option><option>Entidade pública</option><option>Particular</option></select></div>
+            <div><label for="tipo">Tipo de projeto *</label>
+              <select id="tipo" name="tipo" aria-describedby="tipo-err"><option value="">Escolha uma opção</option><option>Edifício de habitação</option><option>Moradia</option><option>Hotelaria</option><option>Comércio ou serviços</option><option>Escola ou equipamento público</option><option>Outro</option></select>
+              <p class="err" id="tipo-err" role="alert"></p></div>
           </div>
-          <div>
-            <label for="tipo">Tipo de projeto *</label>
-            <select id="tipo" name="tipo" aria-describedby="tipo-err">
-              <option value="">Escolha uma opção</option>
-              <option>Edifício de habitação</option>
-              <option>Moradia</option>
-              <option>Hotelaria</option>
-              <option>Comércio ou serviços</option>
-              <option>Escola ou equipamento público</option>
-              <option>Outro</option>
-            </select>
-            <p class="err" id="tipo-err" role="alert"></p>
-          </div>
-          <div>
-            <label for="mensagem">Mensagem *</label>
-            <textarea id="mensagem" name="mensagem" aria-describedby="mensagem-err mensagem-hint"></textarea>
-            <p class="hint" id="mensagem-hint">Localização da obra, tipo de caixilharia, quantidades e prazos, se já os conhecer.</p>
-            <p class="err" id="mensagem-err" role="alert"></p>
-          </div>
-          <div>
-            <label class="check" for="consent"><input type="checkbox" id="consent" name="consent" aria-describedby="consent-err"><span>Aceito que a FALRUI trate os dados indicados para responder a este pedido, nos termos da <a href="../privacidade/index.html">política de privacidade</a>.</span></label>
-            <p class="err" id="consent-err" role="alert"></p>
-          </div>
+          <div><label for="mensagem">Mensagem *</label><textarea id="mensagem" name="mensagem" aria-describedby="mensagem-err mensagem-hint"></textarea><p class="hint" id="mensagem-hint">Localização da obra, tipo de caixilharia, quantidades e prazos, se já os conhecer.</p><p class="err" id="mensagem-err" role="alert"></p></div>
+          <div><label class="check" for="consent"><input type="checkbox" id="consent" name="consent" aria-describedby="consent-err"><span>Aceito que a FALRUI trate os dados indicados para responder a este pedido, nos termos da <a href="../privacidade/index.html">política de privacidade</a>.</span></label><p class="err" id="consent-err" role="alert"></p></div>
           <div><button class="btn" type="submit">Enviar pedido</button></div>
           <div id="form-status" class="status" role="status" tabindex="-1" hidden></div>
-          <p class="hint">Para enviar desenhos ou ficheiros, escreva para <a href="mailto:geral@falrui.pt">geral@falrui.pt</a>.</p>
+          <p class="hint" style="margin:0">Para enviar desenhos ou ficheiros, escreva para <a href="mailto:geral@falrui.pt">geral@falrui.pt</a>.</p>
         </form>
       </div>
     </div>
   </section>
 </main>
+
 <footer class="site-footer">
   <div class="wrap foot-grid">
     <div>
-      <p class="brand brand-foot">FALRUI</p>
+      <a href="../index.html" class="foot-logo" aria-label="FALRUI – página inicial"><img src="https://www.falrui.pt/wp-content/uploads/2023/10/Logotipo-FALRUI-03-300x61.png" alt="FALRUI" width="147" height="30"></a>
       <p>FALRUI – Indústria Caixilharia de Alumínios, S.A.</p>
-      <p class="muted">Fabrico e comercialização de caixilharia de alumínio.</p>
+      <p>Fabrico e comercialização de caixilharia de alumínio.</p>
     </div>
     <div>
       <h2 class="foot-h">Contactos</h2>
@@ -129,11 +99,7 @@
     <div>
       <h2 class="foot-h">Site</h2>
       <ul class="plain">
-        <li><a href="../empresa/index.html">Empresa</a></li>
-        <li><a href="../solucoes/index.html">Soluções</a></li>
-        <li><a href="../projetos/index.html">Projetos</a></li>
-        <li><a href="../qualidade/index.html">Qualidade</a></li>
-        <li><a href="../privacidade/index.html">Política de privacidade</a></li>
+        <li><a href="../empresa/index.html">Empresa</a></li><li><a href="../solucoes/index.html">Soluções</a></li><li><a href="../projetos/index.html">Projetos</a></li><li><a href="../qualidade/index.html">Qualidade</a></li><li><a href="../privacidade/index.html">Política de privacidade</a></li>
       </ul>
     </div>
     <div>
@@ -145,28 +111,13 @@
       </ul>
     </div>
   </div>
-  <div class="wrap legal">© 2026 FALRUI. Todos os direitos reservados.</div>
+  <div class="wrap legal">© 2026 FALRUI · TODOS OS DIREITOS RESERVADOS</div>
 </footer>
 
 <div class="mobile-bar" role="group" aria-label="Contacto rápido">
   <a href="tel:+351262990870">Ligar</a>
   <a href="../contactos/index.html#orcamento" class="primary">Peça um orçamento</a>
 </div>
-
-<dialog id="lightbox" aria-label="Projeto ampliado">
-  <form method="dialog"><button class="lb-close" aria-label="Fechar">×</button></form>
-  <button type="button" class="lb-nav prev" aria-label="Projeto anterior">‹</button>
-  <figure>
-    <img alt="" id="lb-img">
-    <figcaption>
-      <span class="tag" id="lb-tipo"></span>
-      <strong id="lb-nome"></strong>
-      <span id="lb-meta"></span>
-    </figcaption>
-  </figure>
-  <button type="button" class="lb-nav next" aria-label="Projeto seguinte">›</button>
-</dialog>
-
 <script src="../js/main.js" defer></script>
 </body>
 </html>

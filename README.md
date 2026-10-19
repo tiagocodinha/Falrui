@@ -12,17 +12,17 @@ Para publicar, copiar a pasta inteira para qualquer alojamento web.
 ```
 index.html                página inicial
 empresa/ solucoes/ projetos/ qualidade/ contactos/ privacidade/   (cada uma com index.html)
-css/main.css              estilos (inclui as fontes Inter, em fonts/)
-js/main.js                menu, hero, filtro de projetos, lightbox, formulário
+css/main.css              estilos (inclui Montserrat e IBM Plex Mono, em fonts/)
+js/main.js                menu, mapa de obras, lightbox, formulário
 robots.txt  sitemap.xml
 ```
 
 ## Onde editar
 
 - **Contactos e rodapé**: aparecem repetidos em cada `index.html` (cabeçalho, rodapé e barra móvel são iguais em todas as páginas). Pesquisar e substituir `+351 262 990 870` / `geral@falrui.pt`.
-- **Projetos**: cada projeto é um bloco `<li class="project">` em `projetos/index.html` (e os destacados em `index.html`). Para preencher solução, ano ou descrição, usar os atributos `data-solucao`, `data-ano`, `data-descricao` do `<button class="pcard">`.
+- **Projetos**: cada obra é uma linha `<li class="vao">` em `projetos/index.html` (as 8 primeiras também em `index.html`). Para preencher solução, ano ou descrição, usar os atributos `data-solucao`, `data-ano`, `data-descricao` do `<button class="vao-row">`; `data-prev` e `data-full` são as imagens de pré-visualização e ampliação.
 - **Imagens**: estão ligadas ao site atual (www.falrui.pt). Para usar ficheiros próprios, colocá-los numa pasta `img/` e trocar o `src`. As fotografias de 2023/10 do site atual têm só 640px; preferir imagens com 1600px ou mais.
-- **Hero**: as fotografias rodam a partir dos blocos `<div class="slide">` em `index.html`.
+- **Hero**: o “caixilho” são três `<figure class="pane">` em `index.html`; trocar o `src` pelas fotografias pretendidas.
 - Blocos **“A confirmar pela FALRUI”** são espaços por preencher.
 
 ## Formulário
