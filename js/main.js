@@ -1,7 +1,10 @@
-import '@fontsource-variable/inter';
-import '../css/main.css';
-import { site } from '../data/site.js';
-import { formEndpoint } from '../data/form.js';
+// FALRUI – comportamento do site (menu, hero, lightbox, formulário).
+// Configuração editável:
+const site = { email: 'geral@falrui.pt', phone: '+351 262 990 870', phoneHref: 'tel:+351262990870' };
+// URL do serviço que recebe os pedidos do formulário (Formspree, Netlify Forms, função própria...).
+// Enquanto estiver vazio, o formulário valida os campos mas NÃO envia nada e avisa o utilizador.
+const formEndpoint = '';
+
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 

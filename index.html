@@ -14,10 +14,32 @@
   <meta property="og:url" content="https://www.falrui.pt/">
   <meta property="og:image" content="https://www.falrui.pt/wp-content/uploads/2023/10/CrownePlaza1.webp">
   <meta name="theme-color" content="#1b2128">
-  <script type="module" src="/src/js/main.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<!--include:header-->
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="index.html" class="brand" aria-label="FALRUI – página inicial" aria-current="page">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 21 12 3l10 18z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+      <span>FALRUI</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="sr">Menu</span><span class="burger" aria-hidden="true"></span>
+    </button>
+    <nav id="menu" class="nav" aria-label="Principal">
+      <a href="index.html" aria-current="page">Início</a>
+      <a href="empresa/index.html">Empresa</a>
+      <a href="solucoes/index.html">Soluções</a>
+      <a href="projetos/index.html">Projetos</a>
+      <a href="qualidade/index.html">Qualidade</a>
+      <a href="contactos/index.html">Contactos</a>
+      <a href="contactos/index.html#orcamento" class="btn btn-sm">Peça um orçamento</a>
+    </nav>
+  </div>
+</header>
+
 <main id="conteudo">
   <div class="hero">
       <div class="slide" data-nome="Tróia" data-local="Tróia"><img src="https://www.falrui.pt/wp-content/uploads/2025/06/Troia-scaled.jpg" alt="Fotografia do projeto Tróia, Tróia" width="2560" height="1704" fetchpriority="high" decoding="async"></div>
@@ -27,10 +49,10 @@
     <div class="wrap hero-inner">
       <p class="eyebrow">Fabricante de caixilharia de alumínio · Nazaré</p>
       <h1>Caixilharia de alumínio para <em>obras reais</em>.</h1>
-      <p class="lead">Fabrico e comercialização para obras particulares e públicas, em todo o território nacional. Desde {{founded}}.</p>
+      <p class="lead">Fabrico e comercialização para obras particulares e públicas, em todo o território nacional. Desde novembro de 2004.</p>
       <div class="actions">
-        <a class="btn" href="/contactos/#orcamento">Peça um orçamento</a>
-        <a class="btn btn-ghost" href="/projetos/">Ver projetos</a>
+        <a class="btn" href="contactos/index.html#orcamento">Peça um orçamento</a>
+        <a class="btn btn-ghost" href="projetos/index.html">Ver projetos</a>
       </div>
       <div class="hero-foot">
         <p class="hero-cap" aria-live="off" style="margin:0"></p>
@@ -62,7 +84,7 @@
       <div>
         <p class="lead-lg">A FALRUI, S.A. é uma PME dedicada ao fabrico e comercialização de caixilharia de alumínio, com materiais certificados e um sistema de gestão da qualidade segundo a ISO 9001.</p>
         <p>O lema da empresa é a satisfação do cliente, com base na seriedade e na qualidade do serviço prestado.</p>
-        <p><a class="link-arrow" href="/empresa/">Conhecer a empresa</a></p>
+        <p><a class="link-arrow" href="empresa/index.html">Conhecer a empresa</a></p>
       </div>
     </div>
   </section>
@@ -74,9 +96,64 @@
           <p class="eyebrow">Projetos</p>
           <h2>Hotelaria, edifícios, escolas e comércio.</h2>
         </div>
-        <a class="link-arrow" href="/projetos/">Ver os 18 projetos</a>
+        <a class="link-arrow" href="projetos/index.html">Ver os 18 projetos</a>
       </div>
-      <ul class="grid bento reveal"><!--projects:featured--></ul>
+      <ul class="grid bento reveal">
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Tróia" data-local="Tróia" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Troia-scaled.jpg" alt="Fotografia do projeto Tróia, Tróia" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Tróia</strong>
+      <span class="ploc">Tróia</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Novo Banco" data-local="Lisboa" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Novobanco1-scaled.jpg" alt="Fotografia do projeto Edifício Novo Banco, Lisboa" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Novo Banco</strong>
+      <span class="ploc">Lisboa</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Estoril Woods" data-local="Estoril" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Livramento-scaled.jpg" alt="Fotografia do projeto Estoril Woods, Estoril" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Estoril Woods</strong>
+      <span class="ploc">Estoril</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Casal Ribeiro" data-local="Lisboa" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/EDCasalribeiro-scaled.jpg" alt="Fotografia do projeto Edifício Casal Ribeiro, Lisboa" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Casal Ribeiro</strong>
+      <span class="ploc">Lisboa</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Sunset Views" data-local="Nazaré" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Sunsetviews-scaled.jpg" alt="Fotografia do projeto Edifício Sunset Views, Nazaré" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Sunset Views</strong>
+      <span class="ploc">Nazaré</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li></ul>
     </div>
   </section>
 
@@ -103,13 +180,13 @@
         <p class="eyebrow">Qualidade</p>
         <h2>Normas e controlo documentados.</h2>
         <p>Sistema de gestão da qualidade segundo a NP EN ISO 9001, produto abrangido pela norma NP EN 14351-1 e marcação CE, com rastreabilidade dos produtos aplicados nas encomendas.</p>
-        <p><a class="link-arrow" href="/qualidade/">Ver qualidade e certificações</a></p>
+        <p><a class="link-arrow" href="qualidade/index.html">Ver qualidade e certificações</a></p>
       </div>
       <div>
         <p class="eyebrow">Soluções</p>
         <h2>Caixilharia à medida da obra.</h2>
         <p>Janelas e portas em alumínio para habitação, serviços, hotelaria, comércio e equipamentos públicos.</p>
-        <p><a class="link-arrow" href="/solucoes/">Ver soluções</a></p>
+        <p><a class="link-arrow" href="solucoes/index.html">Ver soluções</a></p>
       </div>
     </div>
   </section>
@@ -122,14 +199,83 @@
       </div>
       <ol class="steps reveal">
         <li><h3>Descreva a obra</h3><p>Tipo de projeto, localização e caixilharia pretendida.</p></li>
-        <li><h3>Envie os elementos</h3><p>Desenhos, mapa de vãos ou medidas, por email para {{email}}.</p></li>
+        <li><h3>Envie os elementos</h3><p>Desenhos, mapa de vãos ou medidas, por email para geral@falrui.pt.</p></li>
         <li><h3>Receba o nosso contacto</h3><p>A FALRUI responde através dos dados que indicar no formulário.</p></li>
       </ol>
-      <p style="margin-top:2.5rem"><a class="btn btn-dark" href="/contactos/#orcamento">Abrir o formulário</a></p>
+      <p style="margin-top:2.5rem"><a class="btn btn-dark" href="contactos/index.html#orcamento">Abrir o formulário</a></p>
     </div>
   </section>
 </main>
-<!--include:cta-->
-<!--include:footer-->
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Tem um projeto em preparação?</h2>
+      <p>Envie-nos as peças desenhadas ou uma descrição da obra. Respondemos para o contacto que indicar.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-light" href="contactos/index.html#orcamento">Peça um orçamento</a>
+      <a class="btn btn-ghost" href="tel:+351262990870">Ligue +351 262 990 870</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="brand brand-foot">FALRUI</p>
+      <p>FALRUI – Indústria Caixilharia de Alumínios, S.A.</p>
+      <p class="muted">Fabrico e comercialização de caixilharia de alumínio.</p>
+    </div>
+    <div>
+      <h2 class="foot-h">Contactos</h2>
+      <address>
+        <a href="tel:+351262990870">+351 262 990 870</a><br>
+        <a href="mailto:geral@falrui.pt">geral@falrui.pt</a><br>
+        Mouchinha, Famalicão<br>2450-027 Nazaré<br>
+        <a href="https://maps.app.goo.gl/ehbHLua5JFM9HLAQ7" rel="noopener" target="_blank">Ver no mapa<span class="sr"> (abre noutro separador)</span></a>
+      </address>
+    </div>
+    <div>
+      <h2 class="foot-h">Site</h2>
+      <ul class="plain">
+        <li><a href="empresa/index.html">Empresa</a></li>
+        <li><a href="solucoes/index.html">Soluções</a></li>
+        <li><a href="projetos/index.html">Projetos</a></li>
+        <li><a href="qualidade/index.html">Qualidade</a></li>
+        <li><a href="privacidade/index.html">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="foot-h">Redes</h2>
+      <ul class="plain">
+        <li><a href="https://www.facebook.com/falrui" rel="noopener" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/falrui" rel="noopener" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/falrui---ind%C3%BAstria-caixilharia-de-alum%C3%ADnios/" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">© 2026 FALRUI. Todos os direitos reservados.</div>
+</footer>
+
+<div class="mobile-bar" role="group" aria-label="Contacto rápido">
+  <a href="tel:+351262990870">Ligar</a>
+  <a href="contactos/index.html#orcamento" class="primary">Peça um orçamento</a>
+</div>
+
+<dialog id="lightbox" aria-label="Projeto ampliado">
+  <form method="dialog"><button class="lb-close" aria-label="Fechar">×</button></form>
+  <button type="button" class="lb-nav prev" aria-label="Projeto anterior">‹</button>
+  <figure>
+    <img alt="" id="lb-img">
+    <figcaption>
+      <span class="tag" id="lb-tipo"></span>
+      <strong id="lb-nome"></strong>
+      <span id="lb-meta"></span>
+    </figcaption>
+  </figure>
+  <button type="button" class="lb-nav next" aria-label="Projeto seguinte">›</button>
+</dialog>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>

@@ -13,10 +13,32 @@
   <meta property="og:description" content="Obras com caixilharia FALRUI em todo o país.">
   <meta property="og:url" content="https://www.falrui.pt/projetos/">
   <meta property="og:image" content="https://www.falrui.pt/wp-content/uploads/2023/10/CrownePlaza1.webp">
-  <script type="module" src="/src/js/main.js"></script>
+  <link rel="stylesheet" href="../css/main.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<!--include:header-->
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="../index.html" class="brand" aria-label="FALRUI – página inicial">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 21 12 3l10 18z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+      <span>FALRUI</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="sr">Menu</span><span class="burger" aria-hidden="true"></span>
+    </button>
+    <nav id="menu" class="nav" aria-label="Principal">
+      <a href="../index.html">Início</a>
+      <a href="../empresa/index.html">Empresa</a>
+      <a href="../solucoes/index.html">Soluções</a>
+      <a href="../projetos/index.html" aria-current="page">Projetos</a>
+      <a href="../qualidade/index.html">Qualidade</a>
+      <a href="../contactos/index.html">Contactos</a>
+      <a href="../contactos/index.html#orcamento" class="btn btn-sm">Peça um orçamento</a>
+    </nav>
+  </div>
+</header>
+
 <main id="conteudo">
   <div class="page-head"><div class="wrap">
     <p class="eyebrow">Projetos</p>
@@ -26,13 +48,280 @@
 
   <section>
     <div class="wrap">
-      <div class="filters" role="group" aria-label="Filtrar por tipo de obra"><!--projects:filters--></div>
+      <div class="filters" role="group" aria-label="Filtrar por tipo de obra"><button type="button" class="chip" data-filter="all" aria-pressed="true">Todos</button><button type="button" class="chip" data-filter="Edifícios" aria-pressed="false">Edifícios</button><button type="button" class="chip" data-filter="Hotelaria" aria-pressed="false">Hotelaria</button><button type="button" class="chip" data-filter="Comércio" aria-pressed="false">Comércio</button><button type="button" class="chip" data-filter="Escolas e equipamentos" aria-pressed="false">Escolas e equipamentos</button></div>
       <p class="count" id="count" aria-live="polite">18 projetos</p>
-      <ul class="grid"><!--projects:all--></ul>
+      <ul class="grid">
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Miramar II Lote 8" data-local="Vila Nova de Gaia" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Miramar-scaled.jpg" alt="Fotografia do projeto Edifício Miramar II Lote 8, Vila Nova de Gaia" loading="eager" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Miramar II Lote 8</strong>
+      <span class="ploc">Vila Nova de Gaia</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Tróia" data-local="Tróia" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Troia-scaled.jpg" alt="Fotografia do projeto Tróia, Tróia" loading="eager" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Tróia</strong>
+      <span class="ploc">Tróia</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Sunset Views" data-local="Nazaré" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Sunsetviews-scaled.jpg" alt="Fotografia do projeto Edifício Sunset Views, Nazaré" loading="eager" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Sunset Views</strong>
+      <span class="ploc">Nazaré</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Casal Ribeiro" data-local="Lisboa" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/EDCasalribeiro-scaled.jpg" alt="Fotografia do projeto Edifício Casal Ribeiro, Lisboa" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Casal Ribeiro</strong>
+      <span class="ploc">Lisboa</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Novo Banco" data-local="Lisboa" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Novobanco1-scaled.jpg" alt="Fotografia do projeto Edifício Novo Banco, Lisboa" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Novo Banco</strong>
+      <span class="ploc">Lisboa</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Estoril Woods" data-local="Estoril" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Livramento-scaled.jpg" alt="Fotografia do projeto Estoril Woods, Estoril" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Estoril Woods</strong>
+      <span class="ploc">Estoril</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Pharmacia" data-local="Porto" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Edificio-Pharmacia1-scaled.jpg" alt="Fotografia do projeto Edifício Pharmacia, Porto" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Pharmacia</strong>
+      <span class="ploc">Porto</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Escolas e equipamentos">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Centro de dia de Matos Cheirinhos" data-local="Cascais" data-tipo-label="Escolas e equipamentos" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/Centro-de-dia-de-Matos-Cheirinhos-scaled.jpg" alt="Fotografia do projeto Centro de dia de Matos Cheirinhos, Cascais" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Escolas e equipamentos</span>
+      <strong>Centro de dia de Matos Cheirinhos</strong>
+      <span class="ploc">Cascais</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Cascais" data-local="Cascais" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/cascais2-scaled.jpg" alt="Fotografia do projeto Cascais, Cascais" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Cascais</strong>
+      <span class="ploc">Cascais</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Escolas e equipamentos">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Biblioteca Municipal José Soares" data-local="Nazaré" data-tipo-label="Escolas e equipamentos" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2025/06/biblioteca1.png" alt="Fotografia do projeto Biblioteca Municipal José Soares, Nazaré" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Escolas e equipamentos</span>
+      <strong>Biblioteca Municipal José Soares</strong>
+      <span class="ploc">Nazaré</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Comércio">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Aldi" data-local="Vários locais" data-tipo-label="Comércio" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/aldi1.png" alt="Fotografia do projeto Aldi, Vários locais" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Comércio</span>
+      <strong>Aldi</strong>
+      <span class="ploc">Vários locais</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Condomínio Park Atlântico" data-local="Nazaré" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/parkatlantico3-capa-1.webp" alt="Fotografia do projeto Condomínio Park Atlântico, Nazaré" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Condomínio Park Atlântico</strong>
+      <span class="ploc">Nazaré</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Moinho de Vento" data-local="Nazaré" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/moinho1-1.webp" alt="Fotografia do projeto Moinho de Vento, Nazaré" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Moinho de Vento</strong>
+      <span class="ploc">Nazaré</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Edifícios">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Edifício Rotunda" data-local="São Martinho do Porto" data-tipo-label="Edifícios" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/rotunda1-2.webp" alt="Fotografia do projeto Edifício Rotunda, São Martinho do Porto" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Edifícios</span>
+      <strong>Edifício Rotunda</strong>
+      <span class="ploc">São Martinho do Porto</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Hotelaria">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Crowne Plaza Porto" data-local="Porto" data-tipo-label="Hotelaria" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/CrownePlaza1.webp" alt="Fotografia do projeto Crowne Plaza Porto, Porto" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Hotelaria</span>
+      <strong>Crowne Plaza Porto</strong>
+      <span class="ploc">Porto</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Hotelaria">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Albergaria Mar Bravo" data-local="Nazaré" data-tipo-label="Hotelaria" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/marbravo1-2.webp" alt="Fotografia do projeto Albergaria Mar Bravo, Nazaré" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Hotelaria</span>
+      <strong>Albergaria Mar Bravo</strong>
+      <span class="ploc">Nazaré</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Comércio">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="Lidl" data-local="Vários locais" data-tipo-label="Comércio" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/lidl1-1.webp" alt="Fotografia do projeto Lidl, Vários locais" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Comércio</span>
+      <strong>Lidl</strong>
+      <span class="ploc">Vários locais</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li>
+<li class="project" data-tipo="Escolas e equipamentos">
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="ESAD – Escola Superior de Artes e Design" data-local="Caldas da Rainha" data-tipo-label="Escolas e equipamentos" data-ano="" data-solucao="" data-descricao="">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/esad1-1.webp" alt="Fotografia do projeto ESAD – Escola Superior de Artes e Design, Caldas da Rainha" loading="lazy" decoding="async" width="1200" height="800">
+    <span class="pmeta">
+      <span class="tag">Escolas e equipamentos</span>
+      <strong>ESAD – Escola Superior de Artes e Design</strong>
+      <span class="ploc">Caldas da Rainha</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
+</li></ul>
     </div>
   </section>
 </main>
-<!--include:cta-->
-<!--include:footer-->
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Tem um projeto em preparação?</h2>
+      <p>Envie-nos as peças desenhadas ou uma descrição da obra. Respondemos para o contacto que indicar.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-light" href="../contactos/index.html#orcamento">Peça um orçamento</a>
+      <a class="btn btn-ghost" href="tel:+351262990870">Ligue +351 262 990 870</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="brand brand-foot">FALRUI</p>
+      <p>FALRUI – Indústria Caixilharia de Alumínios, S.A.</p>
+      <p class="muted">Fabrico e comercialização de caixilharia de alumínio.</p>
+    </div>
+    <div>
+      <h2 class="foot-h">Contactos</h2>
+      <address>
+        <a href="tel:+351262990870">+351 262 990 870</a><br>
+        <a href="mailto:geral@falrui.pt">geral@falrui.pt</a><br>
+        Mouchinha, Famalicão<br>2450-027 Nazaré<br>
+        <a href="https://maps.app.goo.gl/ehbHLua5JFM9HLAQ7" rel="noopener" target="_blank">Ver no mapa<span class="sr"> (abre noutro separador)</span></a>
+      </address>
+    </div>
+    <div>
+      <h2 class="foot-h">Site</h2>
+      <ul class="plain">
+        <li><a href="../empresa/index.html">Empresa</a></li>
+        <li><a href="../solucoes/index.html">Soluções</a></li>
+        <li><a href="../projetos/index.html">Projetos</a></li>
+        <li><a href="../qualidade/index.html">Qualidade</a></li>
+        <li><a href="../privacidade/index.html">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="foot-h">Redes</h2>
+      <ul class="plain">
+        <li><a href="https://www.facebook.com/falrui" rel="noopener" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/falrui" rel="noopener" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/falrui---ind%C3%BAstria-caixilharia-de-alum%C3%ADnios/" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">© 2026 FALRUI. Todos os direitos reservados.</div>
+</footer>
+
+<div class="mobile-bar" role="group" aria-label="Contacto rápido">
+  <a href="tel:+351262990870">Ligar</a>
+  <a href="../contactos/index.html#orcamento" class="primary">Peça um orçamento</a>
+</div>
+
+<dialog id="lightbox" aria-label="Projeto ampliado">
+  <form method="dialog"><button class="lb-close" aria-label="Fechar">×</button></form>
+  <button type="button" class="lb-nav prev" aria-label="Projeto anterior">‹</button>
+  <figure>
+    <img alt="" id="lb-img">
+    <figcaption>
+      <span class="tag" id="lb-tipo"></span>
+      <strong id="lb-nome"></strong>
+      <span id="lb-meta"></span>
+    </figcaption>
+  </figure>
+  <button type="button" class="lb-nav next" aria-label="Projeto seguinte">›</button>
+</dialog>
+
+<script src="../js/main.js" defer></script>
 </body>
 </html>
