@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contactos e pedido de orçamento | FALRUI</title>
+  <meta name="description" content="Contacte a FALRUI, na Nazaré: telefone +351 262 990 870, email geral@falrui.pt, ou peça um orçamento de caixilharia de alumínio.">
+  <link rel="canonical" href="https://www.falrui.pt/contactos/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="FALRUI">
+  <meta property="og:title" content="Contactos e pedido de orçamento | FALRUI">
+  <meta property="og:description" content="Telefone, email, morada e formulário de pedido de orçamento.">
+  <meta property="og:url" content="https://www.falrui.pt/contactos/">
+  <meta property="og:image" content="https://www.falrui.pt/wp-content/uploads/2023/10/CrownePlaza1.webp">
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+<!--include:header-->
+<main id="conteudo">
+  <div class="page-head"><div class="wrap">
+    <p class="eyebrow">Contactos</p>
+    <h1>Fale connosco ou peça um orçamento.</h1>
+    <p>Ligue, escreva ou envie os detalhes da obra pelo formulário.</p>
+  </div></div>
+
+  <section>
+    <div class="wrap split wide">
+      <div>
+        <h2>Contactos</h2>
+        <ul class="contact-list">
+          <li><b>Telefone</b><a href="{{phoneHref}}">{{phone}}</a></li>
+          <li><b>Email</b><a href="mailto:{{email}}">{{email}}</a></li>
+          <li><b>Morada</b><address>{{address}}</address><a href="{{mapUrl}}" rel="noopener" target="_blank" style="font-size:1rem">Abrir no mapa<span class="sr"> (abre noutro separador)</span></a></li>
+          <li><b>Horário</b><span class="muted">A confirmar pela FALRUI</span></li>
+        </ul>
+      </div>
+      <div id="orcamento">
+        <h2>Pedido de orçamento</h2>
+        <p class="muted">Indique pelo menos um email ou um telefone. Campos com * são obrigatórios.</p>
+        <form id="quote-form" class="quote" novalidate>
+          <p class="hp" aria-hidden="true"><label>Não preencher <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+          <div>
+            <label for="nome">Nome *</label>
+            <input id="nome" name="nome" autocomplete="name" aria-describedby="nome-err">
+            <p class="err" id="nome-err" role="alert"></p>
+          </div>
+          <div class="row">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-err">
+              <p class="err" id="email-err" role="alert"></p>
+            </div>
+            <div>
+              <label for="telefone">Telefone</label>
+              <input id="telefone" name="telefone" type="tel" autocomplete="tel" aria-describedby="telefone-err">
+              <p class="err" id="telefone-err" role="alert"></p>
+            </div>
+          </div>
+          <div>
+            <label for="tipo">Tipo de projeto *</label>
+            <select id="tipo" name="tipo" aria-describedby="tipo-err">
+              <option value="">Escolha uma opção</option>
+              <option>Edifício de habitação</option>
+              <option>Moradia</option>
+              <option>Hotelaria</option>
+              <option>Comércio ou serviços</option>
+              <option>Escola ou equipamento público</option>
+              <option>Outro</option>
+            </select>
+            <p class="err" id="tipo-err" role="alert"></p>
+          </div>
+          <div>
+            <label for="mensagem">Mensagem *</label>
+            <textarea id="mensagem" name="mensagem" aria-describedby="mensagem-err mensagem-hint"></textarea>
+            <p class="hint" id="mensagem-hint">Localização da obra, tipo de caixilharia, quantidades e prazos, se já os conhecer.</p>
+            <p class="err" id="mensagem-err" role="alert"></p>
+          </div>
+          <div>
+            <label class="check" for="consent"><input type="checkbox" id="consent" name="consent" aria-describedby="consent-err"><span>Aceito que a FALRUI trate os dados indicados para responder a este pedido, nos termos da <a href="/privacidade/">política de privacidade</a>.</span></label>
+            <p class="err" id="consent-err" role="alert"></p>
+          </div>
+          <div><button class="btn" type="submit">Enviar pedido</button></div>
+          <div id="form-status" class="status" role="status" tabindex="-1" hidden></div>
+          <p class="hint">Para enviar desenhos ou ficheiros, escreva para <a href="mailto:{{email}}">{{email}}</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<!--include:footer-->
+</body>
+</html>

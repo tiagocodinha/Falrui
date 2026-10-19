@@ -1,169 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FALRUI - Construction & Engineering</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FALRUI | Caixilharia de alumínio, Nazaré</title>
+  <meta name="description" content="A FALRUI fabrica e comercializa caixilharia de alumínio para obras particulares e públicas, em todo o território nacional. Empresa fundada em 2004, na Nazaré.">
+  <link rel="canonical" href="https://www.falrui.pt/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="FALRUI">
+  <meta property="og:title" content="FALRUI | Caixilharia de alumínio, Nazaré">
+  <meta property="og:description" content="Fabrico e comercialização de caixilharia de alumínio para obras particulares e públicas, em todo o território nacional.">
+  <meta property="og:url" content="https://www.falrui.pt/">
+  <meta property="og:image" content="https://www.falrui.pt/wp-content/uploads/2023/10/CrownePlaza1.webp">
+  <meta name="theme-color" content="#1b2128">
+  <script type="module" src="/src/js/main.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-blue-600">FALRUI</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-600">Services</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-blue-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobileMenu" class="hidden md:hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
-                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
-                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
-            </div>
-        </div>
-    </nav>
+<!--include:header-->
+<main id="conteudo">
+  <div class="hero">
+    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/CrownePlaza1.webp" alt="Fachada do hotel Crowne Plaza Porto, obra com caixilharia FALRUI" width="1600" height="1000" fetchpriority="high">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Fabricante de caixilharia de alumínio · Nazaré</p>
+      <h1>Caixilharia de alumínio para obras particulares e públicas.</h1>
+      <p class="lead">A FALRUI fabrica e comercializa caixilharia de alumínio desde {{founded}}, em todo o território nacional.</p>
+      <div class="actions">
+        <a class="btn" href="/contactos/#orcamento">Peça um orçamento</a>
+        <a class="btn btn-ghost" href="/projetos/">Ver projetos</a>
+      </div>
+    </div>
+  </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center">
-        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-        </div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white opacity-0 transition-opacity duration-1000" id="heroContent">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                Building Through<br>
-                <span id="changingWord" class="text-blue-400 transition-all duration-500">Innovation</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-2xl">
-                FALRUI is your trusted partner in construction and engineering solutions, 
-                delivering excellence and innovation in every project.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg flex items-center transform transition-transform duration-300 hover:scale-105">
-                    Contact Us 
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                    </svg>
-                </a>
-                <a href="#services" class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-3 rounded-lg transform transition-transform duration-300 hover:scale-105">
-                    Our Services
-                </a>
-            </div>
-        </div>
-    </section>
+  <section class="facts" aria-label="A FALRUI em factos">
+    <div class="wrap">
+      <ul>
+        <li><strong>Desde 2004</strong><span>Empresa fundada em novembro de 2004</span></li>
+        <li><strong>Obras particulares e públicas</strong><span>Atividade em todo o território nacional</span></li>
+        <li><strong>ISO 9001</strong><span>Certificada desde 16/03/2009</span></li>
+        <li><strong>PME Líder</strong><span>Estatuto concedido pelo IAPMEI e pela Banca</span></li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Work & Team Carousel Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Work & Team</h2>
-                <p class="text-xl text-gray-600">Excellence in every project, powered by dedicated professionals</p>
-            </div>
+  <section>
+    <div class="wrap split wide">
+      <div>
+        <p class="eyebrow">A empresa</p>
+        <h2>Fabrico próprio, com processos certificados.</h2>
+      </div>
+      <div>
+        <p>A FALRUI, S.A. é uma PME dedicada ao fabrico e comercialização de caixilharia de alumínio. Trabalha com materiais certificados, segundo as normas nacionais e europeias, e mantém um sistema de gestão da qualidade certificado pela ISO 9001.</p>
+        <p>O lema da empresa é a satisfação do cliente, com base na seriedade e na qualidade do serviço prestado.</p>
+        <p><a href="/empresa/">Conhecer a empresa</a></p>
+      </div>
+    </div>
+  </section>
 
-            <div class="relative" id="carousel">
-                <div class="overflow-hidden">
-                    <div class="flex transition-transform duration-500" id="carouselTrack">
-                        <!-- Project 1 -->
-                        <div class="w-full md:w-1/2 lg:w-1/3 flex-none px-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-                                     alt="Modern Office Building" 
-                                     class="w-full h-64 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">Modern Office Complex</h3>
-                                    <p class="text-gray-600">State-of-the-art office building featuring sustainable design and smart technology integration.</p>
-                                </div>
-                            </div>
-                        </div>
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Projetos</p>
+        <h2>Obras em hotelaria, edifícios, escolas e comércio.</h2>
+        <p class="muted">Uma seleção de obras listadas no portfólio da FALRUI, de Vila Nova de Gaia a Tróia.</p>
+      </div>
+      <ul class="grid"><!--projects:featured--></ul>
+      <p style="margin-top:2rem"><a class="btn" href="/projetos/">Ver todos os projetos</a></p>
+    </div>
+  </section>
 
-                        <!-- Project 2 -->
-                        <div class="w-full md:w-1/2 lg:w-1/3 flex-none px-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-                                     alt="Residential Complex" 
-                                     class="w-full h-64 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">Luxury Residential Complex</h3>
-                                    <p class="text-gray-600">Premium residential development with modern amenities and elegant architectural design.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Member 1 -->
-                        <div class="w-full md:w-1/2 lg:w-1/3 flex-none px-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-                                     alt="Engineering Team" 
-                                     class="w-full h-64 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">Engineering Excellence</h3>
-                                    <p class="text-gray-600">Our expert team of engineers ensuring precision and innovation in every project.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 3 -->
-                        <div class="w-full md:w-1/2 lg:w-1/3 flex-none px-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1590986201364-1e7bfa3186c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-                                     alt="Industrial Facility" 
-                                     class="w-full h-64 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">Industrial Innovation</h3>
-                                    <p class="text-gray-600">Modern industrial facility showcasing our expertise in large-scale construction.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Carousel Controls -->
-                <button onclick="moveCarousel('prev')" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <button onclick="moveCarousel('next')" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
-        <!-- Services content remains the same -->
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100">
-        <!-- Contact content remains the same -->
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <!-- Footer content remains the same -->
-    </footer>
-
-    <script src="script.js"></script>
+  <section>
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Qualidade</p>
+        <h2>Normas e controlo documentados.</h2>
+        <p>Sistema de gestão da qualidade segundo a NP EN ISO 9001, produto abrangido pela norma NP EN 14351-1 e marcação CE, com rastreabilidade dos produtos aplicados nas encomendas.</p>
+        <p><a href="/qualidade/">Ver qualidade e certificações</a></p>
+      </div>
+      <div>
+        <p class="eyebrow">Soluções</p>
+        <h2>Caixilharia de alumínio à medida da obra.</h2>
+        <p>Janelas e portas em alumínio para habitação, serviços, hotelaria, comércio e equipamentos públicos.</p>
+        <p><a href="/solucoes/">Ver soluções</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<!--include:cta-->
+<!--include:footer-->
 </body>
 </html>
