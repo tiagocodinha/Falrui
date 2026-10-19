@@ -28,5 +28,6 @@ export const projects = [
   { slug: 'esad', nome: 'ESAD – Escola Superior de Artes e Design', local: 'Caldas da Rainha', tipo: 'Escolas e equipamentos', img: U + '2023/10/esad1-1.webp' },
 ];
 
-// Projetos em destaque na página inicial (por slug).
-export const featured = ['crowne-plaza-porto', 'sunset-views', 'casal-ribeiro', 'novo-banco', 'esad', 'troia'];
+// Projetos em destaque na página inicial (por slug). O primeiro aparece maior:
+// usar fotografias com 1600px ou mais de largura (as de 2023/10 do site atual têm só 640px).
+export const featured = ['troia', 'novo-banco', 'estoril-woods', 'casal-ribeiro', 'sunset-views'];

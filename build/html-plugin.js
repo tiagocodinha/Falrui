@@ -11,16 +11,15 @@ const partial = (n) => readFileSync(new URL(`../src/partials/${n}.html`, import.
 
 const card = (p, eager) => `
 <li class="project" data-tipo="${esc(p.tipo)}">
-  <figure>
+  <button type="button" class="pcard" aria-haspopup="dialog" data-nome="${esc(p.nome)}" data-local="${esc(p.local)}" data-tipo-label="${esc(p.tipo)}" data-ano="${esc(p.ano || '')}" data-solucao="${esc(p.solucao || '')}" data-descricao="${esc(p.descricao || '')}">
     <img src="${esc(p.img)}" alt="${esc(p.alt || `Fotografia do projeto ${p.nome}, ${p.local}`)}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" width="1200" height="800">
-    <figcaption>
+    <span class="pmeta">
       <span class="tag">${esc(p.tipo)}</span>
-      <h3>${esc(p.nome)}</h3>
-      <p>${esc(p.local)}${p.ano ? ' · ' + esc(p.ano) : ''}</p>
-      ${p.solucao ? `<p class="muted">Solução: ${esc(p.solucao)}</p>` : ''}
-      ${p.descricao ? `<p class="muted">${esc(p.descricao)}</p>` : ''}
-    </figcaption>
-  </figure>
+      <strong>${esc(p.nome)}</strong>
+      <span class="ploc">${esc(p.local)}${p.ano ? ' · ' + esc(p.ano) : ''}</span>
+    </span>
+    <span class="sr">Ver ampliado</span>
+  </button>
 </li>`;
 
 const norm = (path) => path.replace(/\?.*$/, '').replace(/index\.html$/, '') || '/';
@@ -47,6 +46,7 @@ export default function falruiHtml() {
           '<!--projects:featured-->': featured.map((s) => card(projects.find((p) => p.slug === s))).join(''),
         };
         for (const [k, v] of Object.entries(subs)) html = html.split(k).join(v);
+        html = html.replace('</head>', '  <script>document.documentElement.classList.add("js")</script>\n</head>');
         const vars = {
           phone: site.phone, phoneHref: site.phoneHref, email: site.email, mapUrl: site.mapUrl,
           founded: site.founded, address: site.address.join('<br>'), legalName: site.legalName,

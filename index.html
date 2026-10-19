@@ -20,14 +20,24 @@
 <!--include:header-->
 <main id="conteudo">
   <div class="hero">
-    <img src="https://www.falrui.pt/wp-content/uploads/2023/10/CrownePlaza1.webp" alt="Fachada do hotel Crowne Plaza Porto, obra com caixilharia FALRUI" width="1600" height="1000" fetchpriority="high">
+      <div class="slide" data-nome="Tróia" data-local="Tróia"><img src="https://www.falrui.pt/wp-content/uploads/2025/06/Troia-scaled.jpg" alt="Fotografia do projeto Tróia, Tróia" width="2560" height="1704" fetchpriority="high" decoding="async"></div>
+      <div class="slide" data-nome="Edifício Novo Banco" data-local="Lisboa"><img src="https://www.falrui.pt/wp-content/uploads/2025/06/Novobanco1-scaled.jpg" alt="Fotografia do projeto Edifício Novo Banco, Lisboa" width="2560" height="1704" loading="lazy" decoding="async"></div>
+      <div class="slide" data-nome="Estoril Woods" data-local="Estoril"><img src="https://www.falrui.pt/wp-content/uploads/2025/06/Livramento-scaled.jpg" alt="Fotografia do projeto Estoril Woods, Estoril" width="2560" height="1704" loading="lazy" decoding="async"></div>
+      <div class="slide" data-nome="Edifício Casal Ribeiro" data-local="Lisboa"><img src="https://www.falrui.pt/wp-content/uploads/2025/06/EDCasalribeiro-scaled.jpg" alt="Fotografia do projeto Edifício Casal Ribeiro, Lisboa" width="2560" height="1704" loading="lazy" decoding="async"></div>
     <div class="wrap hero-inner">
       <p class="eyebrow">Fabricante de caixilharia de alumínio · Nazaré</p>
-      <h1>Caixilharia de alumínio para obras particulares e públicas.</h1>
-      <p class="lead">A FALRUI fabrica e comercializa caixilharia de alumínio desde {{founded}}, em todo o território nacional.</p>
+      <h1>Caixilharia de alumínio para <em>obras reais</em>.</h1>
+      <p class="lead">Fabrico e comercialização para obras particulares e públicas, em todo o território nacional. Desde {{founded}}.</p>
       <div class="actions">
         <a class="btn" href="/contactos/#orcamento">Peça um orçamento</a>
         <a class="btn btn-ghost" href="/projetos/">Ver projetos</a>
+      </div>
+      <div class="hero-foot">
+        <p class="hero-cap" aria-live="off" style="margin:0"></p>
+        <div class="actions" style="align-items:center;gap:.25rem">
+          <div class="dots" role="group" aria-label="Escolher fotografia"></div>
+          <button type="button" class="pause" aria-pressed="false">Pausar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -44,45 +54,78 @@
   </section>
 
   <section>
-    <div class="wrap split wide">
+    <div class="wrap split wide reveal">
       <div>
         <p class="eyebrow">A empresa</p>
-        <h2>Fabrico próprio, com processos certificados.</h2>
+        <h2>Fabrico próprio, processos certificados.</h2>
       </div>
       <div>
-        <p>A FALRUI, S.A. é uma PME dedicada ao fabrico e comercialização de caixilharia de alumínio. Trabalha com materiais certificados, segundo as normas nacionais e europeias, e mantém um sistema de gestão da qualidade certificado pela ISO 9001.</p>
+        <p class="lead-lg">A FALRUI, S.A. é uma PME dedicada ao fabrico e comercialização de caixilharia de alumínio, com materiais certificados e um sistema de gestão da qualidade segundo a ISO 9001.</p>
         <p>O lema da empresa é a satisfação do cliente, com base na seriedade e na qualidade do serviço prestado.</p>
-        <p><a href="/empresa/">Conhecer a empresa</a></p>
+        <p><a class="link-arrow" href="/empresa/">Conhecer a empresa</a></p>
       </div>
     </div>
   </section>
 
   <section class="alt">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Projetos</p>
-        <h2>Obras em hotelaria, edifícios, escolas e comércio.</h2>
-        <p class="muted">Uma seleção de obras listadas no portfólio da FALRUI, de Vila Nova de Gaia a Tróia.</p>
+      <div class="section-head row-head reveal">
+        <div>
+          <p class="eyebrow">Projetos</p>
+          <h2>Hotelaria, edifícios, escolas e comércio.</h2>
+        </div>
+        <a class="link-arrow" href="/projetos/">Ver os 18 projetos</a>
       </div>
-      <ul class="grid"><!--projects:featured--></ul>
-      <p style="margin-top:2rem"><a class="btn" href="/projetos/">Ver todos os projetos</a></p>
+      <ul class="grid bento reveal"><!--projects:featured--></ul>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Para quem trabalhamos</p>
+        <h2>Da moradia ao edifício público.</h2>
+        <p class="muted">A FALRUI atua em obras particulares e públicas. Estes são os perfis a quem este site se dirige.</p>
+      </div>
+      <ul class="audience reveal">
+        <li><span class="n">01</span><h3>Arquitetos e projetistas</h3><p>Envie o projeto ou o mapa de vãos e peça orçamento para a caixilharia.</p></li>
+        <li><span class="n">02</span><h3>Empresas de construção</h3><p>Orçamentos para obras em qualquer ponto do território nacional.</p></li>
+        <li><span class="n">03</span><h3>Promotores imobiliários</h3><p>Edifícios como Miramar II, Sunset Views e Casal Ribeiro, em Gaia, Nazaré e Lisboa.</p></li>
+        <li><span class="n">04</span><h3>Entidades públicas</h3><p>Obras como a Biblioteca Municipal José Soares, na Nazaré, e a ESAD, em Caldas da Rainha.</p></li>
+        <li><span class="n">05</span><h3>Clientes particulares</h3><p>Descreva a sua obra e indique os contactos. Falamos consigo.</p></li>
+      </ul>
     </div>
   </section>
 
   <section>
-    <div class="wrap split">
+    <div class="wrap split reveal">
       <div>
         <p class="eyebrow">Qualidade</p>
         <h2>Normas e controlo documentados.</h2>
         <p>Sistema de gestão da qualidade segundo a NP EN ISO 9001, produto abrangido pela norma NP EN 14351-1 e marcação CE, com rastreabilidade dos produtos aplicados nas encomendas.</p>
-        <p><a href="/qualidade/">Ver qualidade e certificações</a></p>
+        <p><a class="link-arrow" href="/qualidade/">Ver qualidade e certificações</a></p>
       </div>
       <div>
         <p class="eyebrow">Soluções</p>
-        <h2>Caixilharia de alumínio à medida da obra.</h2>
+        <h2>Caixilharia à medida da obra.</h2>
         <p>Janelas e portas em alumínio para habitação, serviços, hotelaria, comércio e equipamentos públicos.</p>
-        <p><a href="/solucoes/">Ver soluções</a></p>
+        <p><a class="link-arrow" href="/solucoes/">Ver soluções</a></p>
       </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Orçamentos</p>
+        <h2>Como pedir um orçamento.</h2>
+      </div>
+      <ol class="steps reveal">
+        <li><h3>Descreva a obra</h3><p>Tipo de projeto, localização e caixilharia pretendida.</p></li>
+        <li><h3>Envie os elementos</h3><p>Desenhos, mapa de vãos ou medidas, por email para {{email}}.</p></li>
+        <li><h3>Receba o nosso contacto</h3><p>A FALRUI responde através dos dados que indicar no formulário.</p></li>
+      </ol>
+      <p style="margin-top:2.5rem"><a class="btn btn-dark" href="/contactos/#orcamento">Abrir o formulário</a></p>
     </div>
   </section>
 </main>

@@ -35,3 +35,22 @@
   </div>
   <div class="wrap legal">© 2026 FALRUI. Todos os direitos reservados.</div>
 </footer>
+
+<div class="mobile-bar" role="group" aria-label="Contacto rápido">
+  <a href="{{phoneHref}}">Ligar</a>
+  <a href="/contactos/#orcamento" class="primary">Peça um orçamento</a>
+</div>
+
+<dialog id="lightbox" aria-label="Projeto ampliado">
+  <form method="dialog"><button class="lb-close" aria-label="Fechar">×</button></form>
+  <button type="button" class="lb-nav prev" aria-label="Projeto anterior">‹</button>
+  <figure>
+    <img alt="" id="lb-img">
+    <figcaption>
+      <span class="tag" id="lb-tipo"></span>
+      <strong id="lb-nome"></strong>
+      <span id="lb-meta"></span>
+    </figcaption>
+  </figure>
+  <button type="button" class="lb-nav next" aria-label="Projeto seguinte">›</button>
+</dialog>
