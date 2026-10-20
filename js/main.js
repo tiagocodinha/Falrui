@@ -17,6 +17,39 @@ if (revealEls.length) {
   }
 }
 
+// Números: contagem animada ao entrar no ecrã (o valor final já está no HTML)
+const counters = document.querySelectorAll('[data-count]');
+if (counters.length && !reduced && 'IntersectionObserver' in window) {
+  const co = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    co.unobserve(e.target);
+    const el = e.target, end = Number(el.dataset.count), suffix = el.dataset.suffix || '', t0 = performance.now(), dur = 1400;
+    const tick = (t) => { const p = Math.min((t - t0) / dur, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suffix; if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), { threshold: 0.6 });
+  counters.forEach((el) => co.observe(el));
+}
+
+// Separadores (cuidados de manutenção)
+document.querySelectorAll('.tabs').forEach((box) => {
+  const tabs = [...box.querySelectorAll('[role=tab]')];
+  const panels = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')));
+  const select = (i, focus) => {
+    tabs.forEach((t, k) => { t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; panels[k].hidden = k !== i; });
+    if (focus) tabs[i].focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(i));
+    t.addEventListener('keydown', (e) => {
+      const k = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+      if (k === undefined) return;
+      e.preventDefault();
+      select((k + tabs.length) % tabs.length, true);
+    });
+  });
+  select(0);
+});
+
 // Menu móvel
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');

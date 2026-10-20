@@ -173,16 +173,84 @@ section { padding: clamp(3.5rem, 8vw, 7rem) 0; }
   .v-nome { grid-area: n; } .v-local { grid-area: l; } .v-tipo { grid-area: y; } .v-go { grid-area: g; }
 }
 
-/* Quem nos procura */
-.perfis { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.35); }
-.perfis a { display: grid; grid-template-columns: 3rem 1fr auto; gap: 1.5rem; align-items: center; padding: 1.6rem .5rem; border-bottom: 1px solid rgba(255,255,255,.35); text-decoration: none; transition: background .2s, color .2s, padding .2s; }
-.perfis .mono { color: var(--sky); }
-.perfis b { font-size: clamp(1.3rem, 2.6vw, 2rem); letter-spacing: -.03em; line-height: 1.15; display: block; }
-.perfis small { display: block; margin-top: .35rem; font-size: .9rem; color: #c4ccd3; font-weight: 400; }
-.perfis .go { font: 500 1.6rem var(--mono); }
-.perfis a:hover { background: var(--blue); color: var(--ink); padding-left: 1.5rem; }
-.perfis a:hover .mono, .perfis a:hover small { color: var(--ink); }
+/* Triângulo decorativo das secções escuras */
 .dark .tri.blue { width: 26rem; right: -8rem; top: -6rem; opacity: .16; transform: rotate(180deg); }
+
+/* Números */
+.stats { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; grid-template-columns: repeat(3, 1fr); }
+.stats li { padding: 1.5rem 1.5rem 0 0; margin-right: 1.5rem; border-top: 1px solid rgba(255,255,255,.35); }
+.stats b { display: block; font-size: clamp(3.2rem, 8.5vw, 7rem); line-height: 1; letter-spacing: -.05em; color: var(--sky); font-variant-numeric: tabular-nums; }
+.stats span { display: block; margin-top: .75rem; font: 500 .74rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #c4ccd3; }
+@media (max-width: 700px) {
+  .stats { grid-template-columns: 1fr; }
+  .stats li { margin-right: 0; padding: 1.1rem 0; display: grid; grid-template-columns: 9.5rem 1fr; align-items: baseline; gap: 1rem; }
+  .stats b { font-size: 3.2rem; }
+  .stats span { margin: 0; }
+}
+
+/* Clientes: grelha de chapas com linhas de cota */
+.clientes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); border-left: 1px solid var(--rule); }
+.clientes li { display: grid; place-items: center; aspect-ratio: 1; padding: 12%; background: var(--white); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); transition: background .2s; }
+.clientes li:hover { background: #eef7fc; }
+.clientes img { width: 100%; height: 100%; object-fit: contain; }
+@media (min-width: 700px) { .clientes { grid-template-columns: repeat(5, 1fr); } .clientes li { padding: 14%; } }
+
+/* Selos de certificação */
+.selo { margin: 0; padding: 1.25rem; background: var(--paper); border: 2px solid var(--ink); box-shadow: 10px 10px 0 var(--blue); max-width: 26rem; }
+.band .selo { background: var(--white); }
+.selo img { width: 100%; height: auto; }
+.selo-ce { background: var(--white); max-width: 20rem; }
+.selo-ce img { padding: 8%; }
+
+/* Separadores de manutenção */
+.tablist { display: none; }
+.js .tablist { display: flex; gap: .5rem; overflow-x: auto; margin: 0 -1.25rem; padding: 0 1.25rem .75rem; scrollbar-width: thin; }
+.tablist button { flex: none; min-height: 46px; padding: .4rem 1.1rem; border: 1.5px solid var(--ink); background: transparent; font: 600 .78rem var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); cursor: pointer; white-space: nowrap; }
+.tablist button:hover { background: var(--sky); }
+.tablist button[aria-selected="true"] { background: var(--ink); color: #fff; }
+.tabpanel { padding: 1.75rem 0 0; max-width: 46rem; }
+.tabpanel[hidden] { display: none; }
+.tabpanel h3 { font-size: 1.4rem; letter-spacing: -.02em; }
+.js .tabpanel { border-top: 2px solid var(--ink); margin-top: -1px; }
+html:not(.js) .tabpanel + .tabpanel { margin-top: 2rem; }
+@media (min-width: 1021px) { .js .tablist { margin: 0; padding: 0 0 .75rem; flex-wrap: wrap; overflow: visible; } }
+
+/* Organograma: árvore horizontal em ecrãs largos, lista vertical com guias no telemóvel */
+.org ul { list-style: none; margin: 0; padding: 0; }
+.org-node { display: block; background: var(--white); border: 2px solid var(--ink); padding: .65rem .85rem; position: relative; }
+.org-node .mono { display: block; font-size: .62rem; color: var(--blue-deep); margin-bottom: .15rem; }
+.org-node b { display: block; font-size: .95rem; letter-spacing: -.01em; line-height: 1.25; }
+.org-node.adm { background: var(--graphite); color: #fff; border-color: var(--ink); }
+.org-node.adm .mono { color: var(--sky); }
+.org-node.dir { background: var(--blue); }
+.org-node.dir .mono { color: var(--ink); }
+.org-node.dep { border-top-width: 6px; }
+.band .org-node:not(.adm):not(.dir) { background: var(--paper); }
+@media (max-width: 1319px) {
+  .org ul ul { margin: 0 0 0 1rem; padding-left: 1.25rem; }
+  .org li { position: relative; padding-top: .75rem; }
+  .org ul ul > li::before { content: ""; position: absolute; left: -1.25rem; top: 2.1rem; width: 1.25rem; border-top: 2px solid var(--ink); }
+  .org ul ul > li::after { content: ""; position: absolute; left: -1.25rem; top: 0; bottom: 0; border-left: 2px solid var(--ink); }
+  .org ul ul > li:last-child::after { bottom: auto; height: 2.1rem; }
+  .org-node { max-width: 24rem; }
+}
+@media (min-width: 1320px) {
+  .org { overflow: visible; }
+  .org ul { display: flex; justify-content: center; position: relative; padding-top: 1.5rem; }
+  .org > ul { padding-top: 0; }
+  .org li { position: relative; display: flex; flex-direction: column; align-items: center; padding: 1.5rem .2rem 0; }
+  .org > ul > li { padding-top: 0; }
+  .org ul ul::before { content: ""; position: absolute; top: 0; left: 50%; height: 1.5rem; border-left: 2px solid var(--ink); }
+  .org ul ul > li::before, .org ul ul > li::after { content: ""; position: absolute; top: 0; width: 50%; height: 1.5rem; border-top: 2px solid var(--ink); }
+  .org ul ul > li::before { right: 50%; }
+  .org ul ul > li::after { left: 50%; }
+  .org ul ul > li:first-child::before, .org ul ul > li:last-child::after { border-top: 0; }
+  .org ul ul > li:only-child::before, .org ul ul > li:only-child::after { border-top: 0; }
+  .org ul ul > li:only-child { padding-top: 1.5rem; }
+  .org-node { width: 8rem; min-height: 4.4rem; text-align: center; padding: .6rem .5rem; }
+  .org-node.adm, .org-node.dir { width: 12rem; }
+  .org-node b { font-size: .88rem; }
+}
 
 /* Ficha técnica (qualidade) */
 .datasheet { width: 100%; border-collapse: collapse; background: var(--white); border: 2px solid var(--ink); }
