@@ -78,6 +78,7 @@ if (rows.length) {
 
   const filters = document.querySelector('.filters');
   const count = document.getElementById('count');
+  const tipoParam = new URLSearchParams(location.search).get('tipo');
   if (filters) filters.addEventListener('click', (e) => {
     const b = e.target.closest('.chip');
     if (!b) return;
@@ -88,6 +89,8 @@ if (rows.length) {
     if (count) count.textContent = `${n} ${n === 1 ? 'obra' : 'obras'}`;
     if (first) setPreview(first);
   });
+
+  if (filters && tipoParam) { const b = [...filters.querySelectorAll('.chip')].find((c) => c.dataset.filter === tipoParam); if (b) b.click(); }
 
   const lb = document.getElementById('lightbox');
   if (lb) {
@@ -117,6 +120,9 @@ if (form) {
   const btn = form.querySelector('button[type=submit]');
   const perfil = new URLSearchParams(location.search).get('perfil');
   if (perfil && form.elements.perfil) form.elements.perfil.value = perfil;
+  const qs = new URLSearchParams(location.search);
+  if (qs.get('nome')) form.elements.nome.value = qs.get('nome');
+  if (qs.get('telefone')) form.elements.telefone.value = qs.get('telefone');
 
   const show = (kind, html) => { status.hidden = false; status.className = `status ${kind}`; status.innerHTML = html; status.focus(); };
   const setErr = (el, msg) => {
@@ -164,3 +170,21 @@ if (form) {
     } finally { btn.disabled = false; }
   });
 }
+
+// Cabeçalho: transparente sobre o azul, vidro escuro depois de descer
+const hdr = document.querySelector('.site-header');
+if (hdr) { const f = () => hdr.classList.toggle('scrolled', scrollY > 40); f(); addEventListener('scroll', f, { passive: true }); }
+
+// Cartões da secção "O que fazemos": um de cada vez, com contador
+document.querySelectorAll('[data-slider]').forEach((box) => {
+  const cards = [...box.querySelectorAll('.scard')];
+  const n = box.querySelector('.n');
+  let i = 0;
+  const show = (k) => { i = (k + cards.length) % cards.length; cards.forEach((c, j) => { c.hidden = j !== i; }); if (n) n.textContent = String(i + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0'); };
+  box.querySelectorAll('[data-dir]').forEach((b) => b.addEventListener('click', () => show(i + Number(b.dataset.dir))));
+  show(0);
+});
+
+// Carrossel de obras recentes
+const rail = document.querySelector('.rail');
+if (rail) document.querySelectorAll('[data-rail]').forEach((b) => b.addEventListener('click', () => rail.scrollBy({ left: Number(b.dataset.rail) * (rail.firstElementChild.offsetWidth + 18), behavior: reduced ? 'auto' : 'smooth' })));
