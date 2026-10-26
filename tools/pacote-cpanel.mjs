@@ -1,5 +1,6 @@
 // Gera deploy/new-v1/ pronto a enviar para o cPanel (www.falrui.pt/new-v1/), sem indexação.
-// Uso: node tools/pacote-cpanel.mjs   (depois, comprimir o CONTEÚDO de deploy/new-v1 em .zip)
+// Uso: node tools/pacote-cpanel.mjs  e depois criar o .zip com o CONTEÚDO de deploy/new-v1 (incluindo o .htaccess).
+// No Windows, NÃO usar 'tar -a' (cria um tar com extensão .zip e o cPanel recusa-o): usar PowerShell com System.IO.Compression.ZipFile.
 import fs from 'node:fs';
 import path from 'node:path';
 
