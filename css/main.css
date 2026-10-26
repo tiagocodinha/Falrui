@@ -83,7 +83,6 @@ strong, b { font-weight: 700; }
   .nav { position: fixed; z-index: 2; inset: 0; display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 6.5rem 1.75rem calc(1.75rem + env(safe-area-inset-bottom)); overflow-y: auto; background: radial-gradient(120% 70% at 100% 0%, rgba(86,152,189,.55) 0%, transparent 60%), linear-gradient(170deg, #1d3f58 0%, #222223 62%); opacity: 0; visibility: hidden; transform: translateY(-14px); transition: opacity .35s ease, transform .35s ease, visibility 0s linear .35s; counter-reset: n; }
   .nav.open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
   .nav > a { counter-increment: n; display: flex; align-items: baseline; gap: 1rem; padding: 1.15rem 0; border-bottom: 1px solid rgba(255,255,255,.16); font-size: clamp(1.6rem, 7.2vw, 2.1rem); font-weight: 700; letter-spacing: -.01em; text-transform: uppercase; line-height: 1.1; opacity: 0; transform: translateX(-18px); }
-  .nav > a::before { content: "0" counter(n); font-size: .72rem; font-weight: 700; letter-spacing: .14em; color: #8fc3e0; min-width: 1.6rem; }
   .nav > a::after { content: "→"; margin-left: auto; font-weight: 300; font-size: 1.3rem; color: rgba(255,255,255,.55); transition: transform .25s, color .25s; }
   .nav > a:hover::after, .nav > a:focus-visible::after { transform: translateX(6px); color: #fff; }
   .nav > a[aria-current="page"] { color: #8fc3e0; border-bottom-color: rgba(143,195,224,.6); }
