@@ -11,7 +11,7 @@ Para publicar, copiar a pasta inteira para qualquer alojamento web.
 
 ```
 index.html                página inicial
-empresa/ solucoes/ projetos/ qualidade/ contactos/ privacidade/   (cada uma com index.html)
+empresa/ projetos/ qualidade/ contactos/ privacidade/   (cada uma com index.html)
 css/main.css              estilos (tipografia Helvetica Neue com Arial de reserva; sem ficheiros de fontes)
 js/main.js                menu, mapa de obras, lightbox, formulário
 robots.txt  sitemap.xml
