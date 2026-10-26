@@ -56,9 +56,10 @@ strong, b { font-weight: 700; }
 .nav a { color: #fff; text-decoration: none; font-size: .88rem; font-weight: 700; padding: .5rem 0; border-bottom: 2px solid transparent; }
 .nav a:hover { border-color: #fff; }
 .nav a[aria-current="page"] { border-color: #fff; }
-.logo img { height: 30px; width: auto; filter: brightness(0) invert(1); }
-.bar-end { display: flex; justify-content: flex-end; align-items: center; gap: .75rem; }
-.pill { display: inline-flex; align-items: center; gap: .55rem; min-height: 40px; padding: .35rem 1.2rem; border: 1px solid rgba(255,255,255,.7); border-radius: 999px; color: #fff; text-decoration: none; font-weight: 700; font-size: .85rem; white-space: nowrap; transition: background .2s, color .2s; }
+.logo { display: flex; align-items: center; line-height: 1; }
+.logo img { display: block; height: 30px; width: auto; filter: brightness(0) invert(1); }
+.bar-end { display: flex; justify-content: flex-end; align-items: center; gap: .75rem; line-height: 1; }
+.pill { line-height: 1; display: inline-flex; align-items: center; gap: .55rem; min-height: 40px; padding: .35rem 1.2rem; border: 1px solid rgba(255,255,255,.7); border-radius: 999px; color: #fff; text-decoration: none; font-weight: 700; font-size: .85rem; white-space: nowrap; transition: background .2s, color .2s; }
 .pill:hover { background: #fff; color: var(--ink); }
 .pill svg { width: 14px; height: 14px; fill: currentColor; }
 .nav-toggle { display: none; justify-self: start; position: relative; z-index: 3; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.7); border-radius: 999px; width: 46px; height: 46px; cursor: pointer; transition: background .25s, border-color .25s; }
@@ -74,7 +75,7 @@ strong, b { font-weight: 700; }
 .no-scroll { overflow: hidden; }
 @media (max-width: 1020px) {
   .bar { grid-template-columns: auto 1fr auto; position: relative; z-index: 3; }
-  .nav-toggle { display: block; order: -1; }
+  .nav-toggle { display: grid; place-items: center; padding: 0; line-height: 1; order: -1; }
   .logo { justify-self: center; position: relative; z-index: 3; }
   .bar-end { position: relative; z-index: 3; }
   .bar-end .pill span { display: none; } .bar-end .pill { width: 46px; min-height: 46px; padding: 0; justify-content: center; }

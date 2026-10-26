@@ -4,7 +4,7 @@ Site estático em HTML, CSS e JavaScript simples. Sem build, sem dependências, 
 
 ## Ver o site
 
-Abrir `index.html` no browser (duplo clique), ou usar o Live Server do VS Code.
+Usar o Live Server do VS Code (ou qualquer servidor web). As ligações são limpas (`empresa/`, `projetos/`...), por isso abrir `index.html` com duplo clique não navega entre páginas.
 Para publicar, copiar a pasta inteira para qualquer alojamento web.
 
 ## Estrutura
