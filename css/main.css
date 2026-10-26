@@ -282,7 +282,7 @@ html:not(.js) .scard + .scard { margin-top: 1.5rem; }
 .callback .btn { width: 100%; }
 
 /* Contactos (painel escuro com marcador) */
-.contacto-home { position: relative; padding: clamp(3.5rem, 7vw, 6rem) 0; color: #fff; overflow: hidden; background: #222223; }
+.contacto-home { --d: calc(min(100% - 2.5rem, 1240px) * .208); position: relative; padding: clamp(3.5rem, 7vw, 6rem) 0; color: #fff; overflow: hidden; background: #222223; }
 .contacto-home::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
   linear-gradient(90deg, rgba(34,34,35,.96) 0%, rgba(34,34,35,.72) 40%, rgba(34,34,35,.2) 80%, rgba(34,34,35,.35) 100%),
   repeating-linear-gradient(32deg, transparent 0 78px, rgba(255,255,255,.07) 78px 80px),
@@ -296,11 +296,11 @@ html:not(.js) .scard + .scard { margin-top: 1.5rem; }
 .contacto-home dt { font: 700 .72rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #bfe0f2; }
 .contacto-home dd { margin: .15rem 0 0; font-size: 1.05rem; }
 .contacto-home a { color: #fff; }
-.pin { position: absolute; z-index: 1; left: 50%; top: calc(50% - 45px); width: 34px; height: 45px; transform: translate(-50%, -100%); pointer-events: none; filter: drop-shadow(0 8px 14px rgba(0,0,0,.55)); }
+.pin { position: absolute; z-index: 1; left: calc(50% + var(--d)); top: calc(50% - 25px); width: 34px; height: 45px; transform: translate(-50%, -100%); pointer-events: none; filter: drop-shadow(0 8px 14px rgba(0,0,0,.55)); }
 .pin svg { display: block; width: 100%; height: 100%; }
 .pin::after { content: ""; position: absolute; left: 50%; bottom: -6px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; border: 2px solid #5698bd; opacity: 0; animation: ping 2.4s ease-out infinite; }
 @keyframes ping { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(3.2); opacity: 0; } }
-.mapa-bg { position: absolute; left: 0; top: -90px; width: 100%; height: calc(100% + 90px); border: 0; pointer-events: none; filter: grayscale(1) invert(1) brightness(.95) contrast(1.05); opacity: .85; }
+.mapa-bg { position: absolute; left: 0; top: -90px; width: calc(100% + 2 * var(--d)); height: calc(100% + 130px); border: 0; pointer-events: none; filter: grayscale(1) invert(1) brightness(.95) contrast(1.05); opacity: .85; }
 
 /* CTA das páginas interiores */
 .cta-band { background: var(--grad); color: #fff; padding: clamp(3.5rem, 7vw, 5.5rem) 0; position: relative; overflow: hidden; }
@@ -428,3 +428,11 @@ dialog#lightbox[open] { display: grid; grid-template-columns: auto 1fr auto; ali
 address { font-style: normal; }
 .legal { border-top: 1px solid rgba(255,255,255,.15); padding: 1.25rem 0; font-size: .75rem; color: #9aa0a6; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; }
 @media (max-width: 860px) { .foot-top { grid-template-columns: 1fr; justify-items: start; } .foot-end { justify-content: flex-start; } }
+
+/* Contactos em telemóvel: cartão por cima, mapa e marcador por baixo */
+@media (max-width: 899px) {
+  .contacto-home { --d: 0px; padding-bottom: 14rem; }
+  .mapa-bg { top: auto; bottom: -40px; width: 100%; height: 17rem; }
+  .pin { left: 50%; top: calc(100% - 96px); }
+  .contacto-home::before { background: linear-gradient(180deg, rgba(34,34,35,.96) 0%, rgba(34,34,35,.8) 55%, rgba(34,34,35,.15) 100%), repeating-linear-gradient(32deg, transparent 0 78px, rgba(255,255,255,.07) 78px 80px), repeating-linear-gradient(-58deg, transparent 0 110px, rgba(255,255,255,.06) 110px 112px); }
+}
