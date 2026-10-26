@@ -54,7 +54,9 @@ document.querySelectorAll('.tabs').forEach((box) => {
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');
 if (toggle && menu) {
-  const set = (open) => { menu.classList.toggle('open', open); toggle.setAttribute('aria-expanded', String(open)); };
+  const hd = document.querySelector('.site-header');
+  const set = (open) => { menu.classList.toggle('open', open); toggle.setAttribute('aria-expanded', String(open)); toggle.querySelector('.sr').textContent = open ? 'Fechar menu' : 'Menu'; hd?.classList.toggle('menu-open', open); document.documentElement.classList.toggle('no-scroll', open); };
+  matchMedia('(min-width: 1021px)').addEventListener('change', (e) => { if (e.matches) set(false); });
   toggle.addEventListener('click', () => set(!menu.classList.contains('open')));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { set(false); toggle.focus(); } });
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
